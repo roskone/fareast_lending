@@ -1,0 +1,109 @@
+/*
+ * FarEastCTF 2026 — дизайн-токены лендинга.
+ * Источник: pen.dev, переменные документа, тема brand=red.
+ * Значения перенесены 1:1 из макетов pqxdh (desktop 1440) и TOoAz (mobile 390).
+ *
+ * Шрифты (Google Fonts, лучше self-host woff2, например через @fontsource):
+ *   Doto        — 800, 900  (только латиница и цифры: «FarEast CTF 2026», «09–10», «01», вордмарк)
+ *   Geist       — 400, 500  (кириллица + латиница)
+ *   Geist Mono  — 400, 500  (кириллица + латиница)
+ *   https://fonts.googleapis.com/css2?family=Doto:wght@800;900&family=Geist:wght@400;500&family=Geist+Mono:wght@400;500&display=swap
+ */
+
+:root {
+  /* ---------- Цвета: базовые токены (имена как в макете) ---------- */
+  --bg: #0a0a0a;
+  --surface: #111111;
+  --surface-2: #161616;
+  --line: #232323;
+  --line-strong: #363636;
+  --text-primary: #f2f1ee;
+  --text-secondary: #a3a29d;
+  --text-tertiary: #83827d;
+  --accent: #dd3f33;       /* фирменный красный (brand=red) */
+  --accent-ink: #ffffff;   /* текст/иконки на --accent */
+  --beige: #e4c6a8;        /* бежевый из мерча: точки «глаза», координаты */
+  --error: #ff4d5e;
+  --success: #5fd38d;
+
+  /* ---------- Цвета: значения, захардкоженные в макете ---------- */
+  --index-muted: #3a3a3a;          /* крупные номера форматов «01», «02» */
+  --wordmark-muted: #262626;       /* гигантский вордмарк в футере */
+  --badge-border: #2a2a2a;         /* рамка карточки бейджа */
+  --badge-clip: #6b6b6b;           /* «клипса» бейджа */
+  --placeholder-bg: rgb(255 255 255 / 0.03);   /* #FFFFFF08 */
+  --placeholder-border: #3e3e3e;
+  --placeholder-text: #abaaa4;
+  --error-bg: rgb(255 77 94 / 0.08);           /* #FF4D5E14 — фон плашки ошибки */
+
+  /* ---------- Шрифты ---------- */
+  --font-display: "Doto", ui-monospace, monospace;
+  --font-sans: "Geist", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "Geist Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+
+  /* ---------- Сетка ---------- */
+  --container: 1280px;        /* колонна контента на desktop (1440 − 2×80) */
+  --gutter: 16px;             /* поля страницы: mobile 16, desktop 80 (см. ниже) */
+  --hairline: 1px;            /* все линии сетки — 1px var(--line) */
+  --grid-mark: 13px;          /* «+» на пересечениях линий */
+
+  /* ---------- Скругления (макет почти везде прямоугольный) ---------- */
+  --radius-none: 0;           /* кнопки, теги, карточки, ячейки */
+  --radius-input: 2px;        /* поля ввода, сегменты, чекбоксы */
+  --radius-chip: 3px;         /* плашки-плейсхолдеры [значение] */
+  --radius-badge: 8px;        /* бейдж (mobile), desktop — 10px */
+
+  /* ---------- Тени ---------- */
+  --shadow-badge: 0 14px 30px rgb(0 0 0 / 0.7);  /* mobile; desktop: 0 18px 40px */
+
+  /* ---------- Типографика (mobile-значения; desktop — в media ниже) ---------- */
+  --fs-hero: 68px;      --lh-hero: 0.92;  --ls-hero: -1.6px;   /* Doto 900 */
+  --fs-wordmark: 58px;  --lh-wordmark: 0.82; --ls-wordmark: -1.7px; /* Doto 800 */
+  --fs-logo: 22px;                                              /* Doto 800 */
+  --fs-format-index: 40px;                                      /* Doto 800, lh 0.9 */
+  --fs-date: 64px;      --ls-date: -2px;                        /* Doto 800, lh 0.9 — одинаково */
+  --fs-h2: 34px;        --ls-h2: -1.2px;                        /* Geist 500, lh 1.05 */
+  --fs-h2-cta: 30px;    --ls-h2-cta: -1px;                      /* «Хотите стать партнёром…», lh 1.05 */
+  --fs-format-name: 28px; --ls-format-name: -0.8px;             /* Geist 500, lh 1.1 */
+  --fs-item-name: 22px; --ls-item-name: -0.5px;                 /* мерч, lh 1.2 */
+  --fs-group-title: 19px;                                       /* заголовки групп формы, Geist 500, lh 1.4, ls -0.4 */
+  --fs-lead-hero: 16px; --lh-lead-hero: 1.5;
+  --fs-lead: 16px;      --lh-lead: 1.5;
+  --fs-overline: 12px;  --ls-overline: 1px;                     /* Geist Mono 500, accent */
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --gutter: 80px;   /* при 1024–1439 можно уменьшать до 32px, колонна max 1280 */
+    --radius-badge: 10px;
+    --shadow-badge: 0 18px 40px rgb(0 0 0 / 0.7);
+
+    --fs-hero: 168px;     --ls-hero: -4px;
+    --fs-wordmark: 210px; --ls-wordmark: -6.3px;
+    --fs-logo: 26px;
+    --fs-format-index: 44px;
+    --fs-h2: 56px;        --ls-h2: -2px;
+    --fs-h2-cta: 48px;    --ls-h2-cta: -1.6px;
+    --fs-format-name: 32px; --ls-format-name: -1px;
+    --fs-item-name: 24px; --ls-item-name: -0.6px;
+    --fs-group-title: 20px;
+    --fs-lead-hero: 20px; --lh-lead-hero: 1.45;
+    --fs-lead: 18px;      --lh-lead: 1.5;
+    --fs-overline: 14px;  --ls-overline: 1.2px;
+  }
+}
+
+/*
+ * Повторяющиеся текстовые стили (одинаковы на mobile и desktop, если не указано иное):
+ *   .label        Geist Mono 400 12px, ls 0.6px, UPPERCASE, --text-tertiary   — «[01] ФОРМАТЫ», «01 / ДАТЫ И ВРЕМЯ»
+ *   .label-sm     Geist Mono 400 11px, lh 1.45, ls 0.6px, --text-tertiary       — подписи строк характеристик
+ *   .tag          Geist Mono 400 12px, ls 0.6px, --text-primary, border 1px --line-strong, padding 5px 8px
+ *   .btn-text     Geist Mono 500 13px, ls 0.6px, UPPERCASE                       — кнопки и текстовые CTA
+ *   .nav-link     Geist Mono 400 13px, ls 0.6px, --text-secondary
+ *   .handle       Geist Mono 400 14px, ls 0.2px                                   — t.me/…
+ *   .input-value  Geist Mono 400 14px
+ *   .chip         Geist Mono 400 13px, --placeholder-text                         — плейсхолдеры [значение]
+ *   .body-16      Geist 400 16px, lh 1.4
+ *   .body-15      Geist 400 15px, lh 1.4 (описания форматов — lh 1.55, мерча — lh 1.5)
+ *   .body-14      Geist 400 14px, lh 1.4                                          — подписи полей, примечания
+ */

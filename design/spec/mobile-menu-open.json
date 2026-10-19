@@ -1,0 +1,533 @@
+{
+ "description": "Mobile 390x844, открытое меню. Источник: pen.dev frame BdUfb",
+ "theme": "brand=red (accent #DD3F33, accent-ink #FFFFFF)",
+ "legend": {
+  "how_to_read": "Дерево узлов pen.dev. Компоненты (ref) уже развёрнуты, поле component = имя компонента. Скрытые узлы (enabled:false) удалены.",
+  "layout": "layout: vertical = flex-direction:column, horizontal или отсутствует = row (по умолчанию у frame - row), none = абсолютное позиционирование детей по x/y.",
+  "sizing": "width/height: число = px; fill_container = растянуть по родителю (flex:1 / width:100%); fit_content или отсутствует = по содержимому.",
+  "padding": "число = со всех сторон; [v,h]; [top,right,bottom,left]. gap = расстояние между детьми.",
+  "justifyContent/alignItems": "start|center|end|space_between - как во flexbox; по умолчанию start.",
+  "stroke": "stroke + strokeWidth = border. strokeWidth объектом {top,right,bottom,left} - только указанные стороны. Обводка внутренняя (inner), в размеры не добавляется.",
+  "text": "fontFamily/цвета через $токены (см. tokens/tokens.css). lineHeight - множитель от fontSize. letterSpacing - px. textGrowth fixed-width = текст переносится по ширине контейнера; без него - в одну строку.",
+  "fill": "Цвет/градиент/картинка фона. Градиент: rotation в градусах против часовой (0=вверх, 90=влево, 180=вниз, 270=вправо), позиции 0..1. Цвета #RRGGBBAA - с альфой.",
+  "layoutPosition": "absolute = вынесен из потока (position:absolute) с координатами x/y относительно родителя.",
+  "icons": "type icon, library lucide - SVG лежат в assets/icons/<icon>.svg (fill=currentColor)."
+ },
+ "tree": {
+  "type": "frame",
+  "id": "BdUfb",
+  "name": "FarEastCTF 2026 — Лендинг · мобильная версия · меню открыто",
+  "theme": {
+   "brand": "red"
+  },
+  "clip": true,
+  "width": 390,
+  "height": 844,
+  "fill": "$bg",
+  "layout": "vertical",
+  "children": [
+   {
+    "type": "frame",
+    "id": "hpy3Q",
+    "name": "Nav",
+    "width": "fill_container",
+    "fill": "$bg",
+    "stroke": "$line",
+    "strokeWidth": {
+     "bottom": 1
+    },
+    "layout": "vertical",
+    "padding": [
+     0,
+     16
+    ],
+    "children": [
+     {
+      "type": "frame",
+      "id": "ke7h3",
+      "name": "Nav / Column",
+      "width": "fill_container",
+      "height": 56,
+      "stroke": "$line",
+      "strokeWidth": {
+       "right": 1,
+       "left": 1
+      },
+      "gap": 12,
+      "padding": [
+       0,
+       0,
+       0,
+       16
+      ],
+      "alignItems": "center",
+      "children": [
+       {
+        "type": "frame",
+        "id": "T9NV8q",
+        "name": "Logo",
+        "width": "fill_container",
+        "gap": 8,
+        "alignItems": "center",
+        "children": [
+         {
+          "type": "rectangle",
+          "id": "lcBOO",
+          "name": "Mark",
+          "fill": "$accent",
+          "width": 8,
+          "height": 8
+         },
+         {
+          "type": "text",
+          "id": "Od50v",
+          "name": "Wordmark",
+          "fill": "$text-primary",
+          "content": "FarEastCTF",
+          "fontFamily": "$font-display",
+          "fontSize": 22,
+          "fontWeight": "800"
+         }
+        ]
+       },
+       {
+        "type": "frame",
+        "id": "xccrk",
+        "name": "Nav CTA",
+        "fill": "$accent",
+        "gap": 14,
+        "padding": [
+         10,
+         14
+        ],
+        "alignItems": "center",
+        "children": [
+         {
+          "type": "text",
+          "id": "lp06A",
+          "name": "Label",
+          "fill": "$accent-ink",
+          "content": "ЗАЯВКА",
+          "fontFamily": "$font-mono",
+          "fontSize": 12,
+          "fontWeight": "500",
+          "letterSpacing": 0.6
+         }
+        ],
+        "component": "Button / Primary"
+       },
+       {
+        "type": "frame",
+        "id": "vtwhu",
+        "name": "Menu",
+        "width": 56,
+        "height": "fill_container",
+        "stroke": "$line",
+        "strokeWidth": {
+         "left": 1
+        },
+        "justifyContent": "center",
+        "alignItems": "center",
+        "children": [
+         {
+          "type": "icon",
+          "id": "m74NVW",
+          "name": "Menu Icon",
+          "width": 20,
+          "height": 20,
+          "icon": "x",
+          "library": "lucide",
+          "fill": "$text-primary"
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "frame",
+    "id": "zZ6i1",
+    "name": "Menu Body",
+    "width": "fill_container",
+    "height": "fill_container",
+    "layout": "vertical",
+    "padding": [
+     0,
+     16
+    ],
+    "children": [
+     {
+      "type": "frame",
+      "id": "zRKed",
+      "name": "Menu / Column",
+      "width": "fill_container",
+      "height": "fill_container",
+      "stroke": "$line",
+      "strokeWidth": {
+       "right": 1,
+       "left": 1
+      },
+      "layout": "vertical",
+      "children": [
+       {
+        "type": "frame",
+        "id": "O9bxZ",
+        "name": "Links",
+        "width": "fill_container",
+        "layout": "vertical",
+        "children": [
+         {
+          "type": "frame",
+          "id": "Wb8An",
+          "name": "Форматы",
+          "width": "fill_container",
+          "stroke": "$line",
+          "strokeWidth": {
+           "bottom": 1
+          },
+          "gap": 14,
+          "padding": 20,
+          "alignItems": "center",
+          "children": [
+           {
+            "type": "text",
+            "id": "bpIiW",
+            "name": "Index",
+            "fill": "$text-tertiary",
+            "content": "[01]",
+            "fontFamily": "$font-mono",
+            "fontSize": 12,
+            "fontWeight": "normal",
+            "letterSpacing": 0.6
+           },
+           {
+            "type": "text",
+            "id": "FREpp",
+            "name": "Label",
+            "fill": "$text-primary",
+            "textGrowth": "fixed-width",
+            "width": "fill_container",
+            "content": "Форматы",
+            "lineHeight": 1.1,
+            "fontFamily": "$font-sans",
+            "fontSize": 26,
+            "fontWeight": "500",
+            "letterSpacing": -0.8
+           },
+           {
+            "type": "icon",
+            "id": "xprhS",
+            "name": "Arrow",
+            "width": 18,
+            "height": 18,
+            "icon": "arrow-down",
+            "library": "lucide",
+            "fill": "$text-tertiary"
+           }
+          ]
+         },
+         {
+          "type": "frame",
+          "id": "TTFUc",
+          "name": "Мерч",
+          "width": "fill_container",
+          "stroke": "$line",
+          "strokeWidth": {
+           "bottom": 1
+          },
+          "gap": 14,
+          "padding": 20,
+          "alignItems": "center",
+          "children": [
+           {
+            "type": "text",
+            "id": "m7v0dt",
+            "name": "Index",
+            "fill": "$text-tertiary",
+            "content": "[02]",
+            "fontFamily": "$font-mono",
+            "fontSize": 12,
+            "fontWeight": "normal",
+            "letterSpacing": 0.6
+           },
+           {
+            "type": "text",
+            "id": "b7vnSN",
+            "name": "Label",
+            "fill": "$text-primary",
+            "textGrowth": "fixed-width",
+            "width": "fill_container",
+            "content": "Мерч",
+            "lineHeight": 1.1,
+            "fontFamily": "$font-sans",
+            "fontSize": 26,
+            "fontWeight": "500",
+            "letterSpacing": -0.8
+           },
+           {
+            "type": "icon",
+            "id": "k8YbpJ",
+            "name": "Arrow",
+            "width": 18,
+            "height": 18,
+            "icon": "arrow-down",
+            "library": "lucide",
+            "fill": "$text-tertiary"
+           }
+          ]
+         },
+         {
+          "type": "frame",
+          "id": "E7xXiE",
+          "name": "Партнёры",
+          "width": "fill_container",
+          "stroke": "$line",
+          "strokeWidth": {
+           "bottom": 1
+          },
+          "gap": 14,
+          "padding": 20,
+          "alignItems": "center",
+          "children": [
+           {
+            "type": "text",
+            "id": "GZHE1",
+            "name": "Index",
+            "fill": "$text-tertiary",
+            "content": "[03]",
+            "fontFamily": "$font-mono",
+            "fontSize": 12,
+            "fontWeight": "normal",
+            "letterSpacing": 0.6
+           },
+           {
+            "type": "text",
+            "id": "Irw4f",
+            "name": "Label",
+            "fill": "$text-primary",
+            "textGrowth": "fixed-width",
+            "width": "fill_container",
+            "content": "Партнёры",
+            "lineHeight": 1.1,
+            "fontFamily": "$font-sans",
+            "fontSize": 26,
+            "fontWeight": "500",
+            "letterSpacing": -0.8
+           },
+           {
+            "type": "icon",
+            "id": "IMIc6",
+            "name": "Arrow",
+            "width": 18,
+            "height": 18,
+            "icon": "arrow-down",
+            "library": "lucide",
+            "fill": "$text-tertiary"
+           }
+          ]
+         },
+         {
+          "type": "frame",
+          "id": "Xj0Vg",
+          "name": "При поддержке",
+          "width": "fill_container",
+          "stroke": "$line",
+          "strokeWidth": {
+           "bottom": 1
+          },
+          "gap": 14,
+          "padding": 20,
+          "alignItems": "center",
+          "children": [
+           {
+            "type": "text",
+            "id": "oNV3M",
+            "name": "Index",
+            "fill": "$text-tertiary",
+            "content": "[04]",
+            "fontFamily": "$font-mono",
+            "fontSize": 12,
+            "fontWeight": "normal",
+            "letterSpacing": 0.6
+           },
+           {
+            "type": "text",
+            "id": "p4gpu",
+            "name": "Label",
+            "fill": "$text-primary",
+            "textGrowth": "fixed-width",
+            "width": "fill_container",
+            "content": "При поддержке",
+            "lineHeight": 1.1,
+            "fontFamily": "$font-sans",
+            "fontSize": 26,
+            "fontWeight": "500",
+            "letterSpacing": -0.8
+           },
+           {
+            "type": "icon",
+            "id": "JdJY8",
+            "name": "Arrow",
+            "width": 18,
+            "height": 18,
+            "icon": "arrow-down",
+            "library": "lucide",
+            "fill": "$text-tertiary"
+           }
+          ]
+         }
+        ]
+       },
+       {
+        "type": "frame",
+        "id": "VL6hK",
+        "name": "Filler",
+        "clip": true,
+        "width": "fill_container",
+        "height": "fill_container",
+        "layout": "none",
+        "children": [
+         {
+          "type": "path",
+          "id": "A1Ul8X",
+          "x": 0,
+          "y": 0,
+          "name": "Hatch",
+          "geometry": "<diagonal hatch: 1px lines at 45deg (\"/\"), horizontal step 10px, color $line - see assets/svg/hatch.svg>",
+          "viewBox": [
+           0,
+           0,
+           358,
+           600
+          ],
+          "width": 358,
+          "height": 600,
+          "stroke": "$line",
+          "strokeWidth": 1
+         }
+        ]
+       },
+       {
+        "type": "frame",
+        "id": "fztCc",
+        "name": "Bottom",
+        "width": "fill_container",
+        "fill": "$bg",
+        "stroke": "$line",
+        "strokeWidth": {
+         "top": 1
+        },
+        "layout": "vertical",
+        "gap": 18,
+        "padding": [
+         24,
+         20,
+         28,
+         20
+        ],
+        "children": [
+         {
+          "type": "frame",
+          "id": "naa6l",
+          "name": "Event",
+          "gap": 8,
+          "alignItems": "center",
+          "children": [
+           {
+            "type": "ellipse",
+            "id": "Vn64l",
+            "name": "Dot",
+            "fill": "$accent",
+            "width": 6,
+            "height": 6
+           },
+           {
+            "type": "text",
+            "id": "v7XR1",
+            "name": "Event Text",
+            "fill": "$text-secondary",
+            "content": "09–10 НОЯБРЯ 2026 · ХАБАРОВСК",
+            "fontFamily": "$font-mono",
+            "fontSize": 12,
+            "fontWeight": "normal",
+            "letterSpacing": 0.6
+           }
+          ]
+         },
+         {
+          "type": "frame",
+          "id": "Fprqb",
+          "name": "Contacts",
+          "width": "fill_container",
+          "gap": 24,
+          "children": [
+           {
+            "type": "frame",
+            "id": "l5Tj4o",
+            "name": "t.me/FarEastCTF",
+            "gap": 8,
+            "alignItems": "center",
+            "children": [
+             {
+              "type": "icon",
+              "id": "yVyns",
+              "name": "Icon",
+              "width": 15,
+              "height": 15,
+              "icon": "send",
+              "library": "lucide",
+              "fill": "$accent"
+             },
+             {
+              "type": "text",
+              "id": "Yb2c3",
+              "name": "Link Text",
+              "fill": "$text-primary",
+              "content": "t.me/FarEastCTF",
+              "fontFamily": "$font-mono",
+              "fontSize": 13,
+              "fontWeight": "normal"
+             }
+            ]
+           },
+           {
+            "type": "frame",
+            "id": "u1nb08",
+            "name": "t.me/togu_KB",
+            "gap": 8,
+            "alignItems": "center",
+            "children": [
+             {
+              "type": "icon",
+              "id": "meqng",
+              "name": "Icon",
+              "width": 15,
+              "height": 15,
+              "icon": "send",
+              "library": "lucide",
+              "fill": "$accent"
+             },
+             {
+              "type": "text",
+              "id": "oYwfM",
+              "name": "Link Text",
+              "fill": "$text-primary",
+              "content": "t.me/togu_KB",
+              "fontFamily": "$font-mono",
+              "fontSize": 13,
+              "fontWeight": "normal"
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ }
+}

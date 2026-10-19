@@ -1,0 +1,420 @@
+{
+ "description": "Исходные компоненты (до переопределений в экземплярах). Скрытые части (enabled:false) - опциональные слоты: Field/Trailing Icon (chevron для select), Field/Hint (подсказка/ошибка), Checkbox/Check (галочка в выбранном состоянии).",
+ "components": {
+  "Button / Primary": {
+   "type": "frame",
+   "id": "wnFsa",
+   "name": "Button / Primary",
+   "reusable": true,
+   "fill": "$accent",
+   "gap": 14,
+   "padding": [
+    15,
+    20
+   ],
+   "alignItems": "center",
+   "children": [
+    {
+     "type": "text",
+     "id": "lp06A",
+     "name": "Label",
+     "fill": "$accent-ink",
+     "content": "ПОДАТЬ ЗАЯВКУ",
+     "fontFamily": "$font-mono",
+     "fontSize": 13,
+     "fontWeight": "500",
+     "letterSpacing": 0.6
+    },
+    {
+     "type": "icon",
+     "id": "ktrjq",
+     "name": "Icon",
+     "width": 16,
+     "height": 16,
+     "icon": "arrow-right",
+     "library": "lucide",
+     "fill": "$accent-ink"
+    }
+   ]
+  },
+  "Button / Secondary": {
+   "type": "frame",
+   "id": "RRn30",
+   "name": "Button / Secondary",
+   "reusable": true,
+   "stroke": "$line-strong",
+   "strokeWidth": 1,
+   "gap": 14,
+   "padding": [
+    15,
+    20
+   ],
+   "alignItems": "center",
+   "children": [
+    {
+     "type": "text",
+     "id": "gxwrU",
+     "name": "Label",
+     "fill": "$text-primary",
+     "content": "ПОСМОТРЕТЬ ФОРМАТЫ",
+     "fontFamily": "$font-mono",
+     "fontSize": 13,
+     "fontWeight": "500",
+     "letterSpacing": 0.6
+    },
+    {
+     "type": "icon",
+     "id": "f75lxX",
+     "name": "Icon",
+     "width": 16,
+     "height": 16,
+     "icon": "arrow-down",
+     "library": "lucide",
+     "fill": "$text-primary"
+    }
+   ]
+  },
+  "Placeholder": {
+   "type": "frame",
+   "id": "mY4DV",
+   "name": "Placeholder",
+   "reusable": true,
+   "fill": "#FFFFFF08",
+   "cornerRadius": 3,
+   "stroke": "#3E3E3E",
+   "strokeWidth": 1,
+   "padding": [
+    3,
+    8
+   ],
+   "alignItems": "center",
+   "children": [
+    {
+     "type": "text",
+     "id": "gMeM0",
+     "name": "Text",
+     "fill": "#ABAAA4",
+     "content": "[значение]",
+     "fontFamily": "$font-mono",
+     "fontSize": 13,
+     "fontWeight": "normal"
+    }
+   ]
+  },
+  "Partner Cell": {
+   "type": "frame",
+   "id": "WJzLf",
+   "name": "Partner Cell",
+   "reusable": true,
+   "width": 256,
+   "height": 184,
+   "stroke": "$line",
+   "strokeWidth": {
+    "right": 1
+   },
+   "layout": "vertical",
+   "padding": [
+    20,
+    24
+   ],
+   "justifyContent": "space_between",
+   "children": [
+    {
+     "type": "frame",
+     "id": "foScG",
+     "name": "Top",
+     "width": "fill_container",
+     "justifyContent": "space_between",
+     "alignItems": "center",
+     "children": [
+      {
+       "type": "text",
+       "id": "yejun",
+       "name": "Index",
+       "fill": "$text-tertiary",
+       "content": "P/01",
+       "fontFamily": "$font-mono",
+       "fontSize": 12,
+       "fontWeight": "normal"
+      },
+      {
+       "type": "icon",
+       "id": "QU1ta",
+       "name": "Link",
+       "width": 16,
+       "height": 16,
+       "icon": "arrow-up-right",
+       "library": "lucide",
+       "fill": "$text-tertiary"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "id": "h7kEP",
+     "name": "Name",
+     "fill": "$text-primary",
+     "textGrowth": "fixed-width",
+     "width": "fill_container",
+     "content": "Солар",
+     "fontFamily": "$font-sans",
+     "fontSize": 22,
+     "fontWeight": "500",
+     "letterSpacing": -0.4
+    },
+    {
+     "id": "lW62B",
+     "type": "ref",
+     "ref": "mY4DV",
+     "name": "Status",
+     "descendants": {
+      "gMeM0": {
+       "content": "[статус]"
+      }
+     }
+    }
+   ]
+  },
+  "Support Row": {
+   "type": "frame",
+   "id": "nuruI",
+   "name": "Support Row",
+   "reusable": true,
+   "width": 1000,
+   "stroke": "$line",
+   "strokeWidth": {
+    "bottom": 1
+   },
+   "gap": 32,
+   "padding": [
+    24,
+    32
+   ],
+   "alignItems": "center",
+   "children": [
+    {
+     "type": "frame",
+     "id": "vlU1d",
+     "name": "Logo Slot",
+     "width": 64,
+     "height": 64,
+     "stroke": "$line-strong",
+     "strokeWidth": 1,
+     "justifyContent": "center",
+     "alignItems": "center",
+     "children": [
+      {
+       "type": "text",
+       "id": "e94R62",
+       "name": "Logo Text",
+       "fill": "$text-tertiary",
+       "content": "ЛОГО",
+       "fontFamily": "$font-mono",
+       "fontSize": 10,
+       "fontWeight": "normal",
+       "letterSpacing": 1
+      }
+     ]
+    },
+    {
+     "type": "frame",
+     "id": "Gj5nT",
+     "name": "Names",
+     "width": "fill_container",
+     "layout": "vertical",
+     "gap": 6,
+     "children": [
+      {
+       "type": "text",
+       "id": "UGZtI",
+       "name": "Short Name",
+       "fill": "$text-primary",
+       "textGrowth": "fixed-width",
+       "width": "fill_container",
+       "content": "АРСИБ",
+       "fontFamily": "$font-sans",
+       "fontSize": 24,
+       "fontWeight": "500",
+       "letterSpacing": -0.5
+      },
+      {
+       "type": "text",
+       "id": "E02xAV",
+       "name": "Full Name",
+       "fill": "$text-secondary",
+       "textGrowth": "fixed-width",
+       "width": "fill_container",
+       "content": "Полное официальное название",
+       "fontFamily": "$font-sans",
+       "fontSize": 15,
+       "fontWeight": "normal"
+      }
+     ]
+    },
+    {
+     "id": "NoQkN",
+     "type": "ref",
+     "ref": "mY4DV",
+     "name": "Role",
+     "descendants": {
+      "gMeM0": {
+       "content": "[роль организации]"
+      }
+     }
+    },
+    {
+     "type": "icon",
+     "id": "X1xbYi",
+     "name": "Link",
+     "width": 20,
+     "height": 20,
+     "icon": "arrow-up-right",
+     "library": "lucide",
+     "fill": "$text-secondary"
+    }
+   ]
+  },
+  "Field": {
+   "type": "frame",
+   "id": "GFUTR",
+   "name": "Field",
+   "reusable": true,
+   "width": 320,
+   "layout": "vertical",
+   "gap": 8,
+   "children": [
+    {
+     "type": "frame",
+     "id": "RnZQR",
+     "name": "Label Row",
+     "gap": 4,
+     "children": [
+      {
+       "type": "text",
+       "id": "Lv6aO",
+       "name": "Label",
+       "fill": "$text-secondary",
+       "content": "Электронная почта",
+       "fontFamily": "$font-sans",
+       "fontSize": 14,
+       "fontWeight": "normal"
+      },
+      {
+       "type": "text",
+       "id": "qtLeA",
+       "name": "Required",
+       "fill": "$accent",
+       "content": "*",
+       "fontFamily": "$font-sans",
+       "fontSize": 14,
+       "fontWeight": "normal"
+      }
+     ]
+    },
+    {
+     "type": "frame",
+     "id": "bGJc7",
+     "name": "Input",
+     "width": "fill_container",
+     "height": 48,
+     "fill": "$surface-2",
+     "cornerRadius": 2,
+     "stroke": "$line-strong",
+     "strokeWidth": 1,
+     "padding": [
+      0,
+      14
+     ],
+     "justifyContent": "space_between",
+     "alignItems": "center",
+     "children": [
+      {
+       "type": "text",
+       "id": "Z4x7wO",
+       "name": "Value",
+       "fill": "$text-tertiary",
+       "content": "name@example.ru",
+       "fontFamily": "$font-mono",
+       "fontSize": 14,
+       "fontWeight": "normal"
+      },
+      {
+       "type": "icon",
+       "id": "KzS2f",
+       "x": 0,
+       "y": 0,
+       "name": "Trailing Icon",
+       "enabled": false,
+       "width": 16,
+       "height": 16,
+       "icon": "chevron-down",
+       "library": "lucide",
+       "fill": "$text-tertiary"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "id": "t96p1C",
+     "x": 0,
+     "y": 0,
+     "name": "Hint",
+     "enabled": false,
+     "fill": "$text-tertiary",
+     "content": "Подсказка",
+     "fontFamily": "$font-sans",
+     "fontSize": 13,
+     "fontWeight": "normal"
+    }
+   ]
+  },
+  "Checkbox": {
+   "type": "frame",
+   "id": "xRwzo",
+   "name": "Checkbox",
+   "reusable": true,
+   "gap": 12,
+   "alignItems": "center",
+   "children": [
+    {
+     "type": "frame",
+     "id": "w7L8e",
+     "name": "Box",
+     "width": 20,
+     "height": 20,
+     "fill": "$surface-2",
+     "cornerRadius": 2,
+     "stroke": "$line-strong",
+     "strokeWidth": 1,
+     "justifyContent": "center",
+     "alignItems": "center",
+     "children": [
+      {
+       "type": "icon",
+       "id": "tHQab",
+       "x": 0,
+       "y": 0,
+       "name": "Check",
+       "enabled": false,
+       "width": 14,
+       "height": 14,
+       "icon": "check",
+       "library": "lucide",
+       "fill": "$accent-ink"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "id": "S2vQ39",
+     "name": "Label",
+     "fill": "$text-primary",
+     "content": "Планирую участвовать в очном этапе в Хабаровске",
+     "fontFamily": "$font-sans",
+     "fontSize": 15,
+     "fontWeight": "normal"
+    }
+   ]
+  }
+ }
+}

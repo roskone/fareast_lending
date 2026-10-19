@@ -1,0 +1,787 @@
+{
+ "description": "Состояния формы (ошибки, отправка, успех). Источник: pen.dev frame i62t5. ВНИМАНИЕ: в макете у этого борда старая оранжевая тема - используйте красные токены (accent #DD3F33)",
+ "theme": "brand=red (accent #DD3F33, accent-ink #FFFFFF)",
+ "legend": {
+  "how_to_read": "Дерево узлов pen.dev. Компоненты (ref) уже развёрнуты, поле component = имя компонента. Скрытые узлы (enabled:false) удалены.",
+  "layout": "layout: vertical = flex-direction:column, horizontal или отсутствует = row (по умолчанию у frame - row), none = абсолютное позиционирование детей по x/y.",
+  "sizing": "width/height: число = px; fill_container = растянуть по родителю (flex:1 / width:100%); fit_content или отсутствует = по содержимому.",
+  "padding": "число = со всех сторон; [v,h]; [top,right,bottom,left]. gap = расстояние между детьми.",
+  "justifyContent/alignItems": "start|center|end|space_between - как во flexbox; по умолчанию start.",
+  "stroke": "stroke + strokeWidth = border. strokeWidth объектом {top,right,bottom,left} - только указанные стороны. Обводка внутренняя (inner), в размеры не добавляется.",
+  "text": "fontFamily/цвета через $токены (см. tokens/tokens.css). lineHeight - множитель от fontSize. letterSpacing - px. textGrowth fixed-width = текст переносится по ширине контейнера; без него - в одну строку.",
+  "fill": "Цвет/градиент/картинка фона. Градиент: rotation в градусах против часовой (0=вверх, 90=влево, 180=вниз, 270=вправо), позиции 0..1. Цвета #RRGGBBAA - с альфой.",
+  "layoutPosition": "absolute = вынесен из потока (position:absolute) с координатами x/y относительно родителя.",
+  "icons": "type icon, library lucide - SVG лежат в assets/icons/<icon>.svg (fill=currentColor)."
+ },
+ "tree": {
+  "type": "frame",
+  "id": "i62t5",
+  "name": "Форма заявки — состояния",
+  "clip": true,
+  "width": 1440,
+  "fill": "$bg",
+  "layout": "vertical",
+  "gap": 48,
+  "padding": [
+   80,
+   80,
+   96,
+   80
+  ],
+  "children": [
+   {
+    "type": "frame",
+    "id": "tp1pR",
+    "name": "Header",
+    "width": "fill_container",
+    "layout": "vertical",
+    "gap": 16,
+    "children": [
+     {
+      "type": "text",
+      "id": "McYhP",
+      "name": "Label",
+      "fill": "$text-tertiary",
+      "content": "[05] ЗАЯВКА · СОСТОЯНИЯ",
+      "fontFamily": "$font-mono",
+      "fontSize": 12,
+      "fontWeight": "normal",
+      "letterSpacing": 0.6
+     },
+     {
+      "type": "text",
+      "id": "y39cn",
+      "name": "Title",
+      "fill": "$text-primary",
+      "content": "Сообщения и состояния формы",
+      "lineHeight": 1.1,
+      "fontFamily": "$font-sans",
+      "fontSize": 44,
+      "fontWeight": "500",
+      "letterSpacing": -1.5
+     }
+    ]
+   },
+   {
+    "type": "frame",
+    "id": "vABDA",
+    "name": "Row",
+    "width": "fill_container",
+    "height": 203,
+    "stroke": "$line",
+    "strokeWidth": {
+     "top": 1,
+     "left": 1
+    },
+    "children": [
+     {
+      "type": "frame",
+      "id": "Mn5f3",
+      "name": "01 / ОБЯЗАТЕЛЬНОЕ ПОЛЕ",
+      "width": "fill_container",
+      "height": "fill_container",
+      "stroke": "$line",
+      "strokeWidth": {
+       "right": 1,
+       "bottom": 1
+      },
+      "layout": "vertical",
+      "gap": 24,
+      "padding": [
+       28,
+       32,
+       36,
+       32
+      ],
+      "children": [
+       {
+        "type": "text",
+        "id": "WmVtN",
+        "name": "Caption",
+        "fill": "$text-secondary",
+        "content": "01 / ОБЯЗАТЕЛЬНОЕ ПОЛЕ",
+        "fontFamily": "$font-mono",
+        "fontSize": 12,
+        "fontWeight": "normal",
+        "letterSpacing": 0.6
+       },
+       {
+        "type": "frame",
+        "id": "eD81Q",
+        "name": "Название команды",
+        "width": "fill_container",
+        "layout": "vertical",
+        "gap": 8,
+        "children": [
+         {
+          "type": "frame",
+          "id": "RnZQR",
+          "name": "Label Row",
+          "gap": 4,
+          "children": [
+           {
+            "type": "text",
+            "id": "Lv6aO",
+            "name": "Label",
+            "fill": "$text-secondary",
+            "content": "Название команды",
+            "fontFamily": "$font-sans",
+            "fontSize": 14,
+            "fontWeight": "normal"
+           },
+           {
+            "type": "text",
+            "id": "qtLeA",
+            "name": "Required",
+            "fill": "$accent",
+            "content": "*",
+            "fontFamily": "$font-sans",
+            "fontSize": 14,
+            "fontWeight": "normal"
+           }
+          ]
+         },
+         {
+          "type": "frame",
+          "id": "bGJc7",
+          "name": "Input",
+          "width": "fill_container",
+          "height": 48,
+          "fill": "$surface-2",
+          "cornerRadius": 2,
+          "stroke": "$error",
+          "strokeWidth": 1,
+          "padding": [
+           0,
+           14
+          ],
+          "justifyContent": "space_between",
+          "alignItems": "center",
+          "children": [
+           {
+            "type": "text",
+            "id": "Z4x7wO",
+            "name": "Value",
+            "fill": "$text-tertiary",
+            "content": "Введите название",
+            "fontFamily": "$font-mono",
+            "fontSize": 14,
+            "fontWeight": "normal"
+           }
+          ]
+         },
+         {
+          "type": "text",
+          "id": "t96p1C",
+          "x": 0,
+          "y": 0,
+          "name": "Hint",
+          "enabled": true,
+          "fill": "$error",
+          "content": "Заполните это поле",
+          "fontFamily": "$font-sans",
+          "fontSize": 13,
+          "fontWeight": "normal",
+          "_hidden": "enabled:false - not rendered"
+         }
+        ],
+        "component": "Field"
+       }
+      ]
+     },
+     {
+      "type": "frame",
+      "id": "UXn2l",
+      "name": "02 / НЕКОРРЕКТНАЯ ПОЧТА",
+      "width": "fill_container",
+      "height": "fill_container",
+      "stroke": "$line",
+      "strokeWidth": {
+       "right": 1,
+       "bottom": 1
+      },
+      "layout": "vertical",
+      "gap": 24,
+      "padding": [
+       28,
+       32,
+       36,
+       32
+      ],
+      "children": [
+       {
+        "type": "text",
+        "id": "BFv8V",
+        "name": "Caption",
+        "fill": "$text-secondary",
+        "content": "02 / НЕКОРРЕКТНАЯ ПОЧТА",
+        "fontFamily": "$font-mono",
+        "fontSize": 12,
+        "fontWeight": "normal",
+        "letterSpacing": 0.6
+       },
+       {
+        "type": "frame",
+        "id": "G2cMWA",
+        "name": "Электронная почта",
+        "width": "fill_container",
+        "layout": "vertical",
+        "gap": 8,
+        "children": [
+         {
+          "type": "frame",
+          "id": "RnZQR",
+          "name": "Label Row",
+          "gap": 4,
+          "children": [
+           {
+            "type": "text",
+            "id": "Lv6aO",
+            "name": "Label",
+            "fill": "$text-secondary",
+            "content": "Электронная почта",
+            "fontFamily": "$font-sans",
+            "fontSize": 14,
+            "fontWeight": "normal"
+           },
+           {
+            "type": "text",
+            "id": "qtLeA",
+            "name": "Required",
+            "fill": "$accent",
+            "content": "*",
+            "fontFamily": "$font-sans",
+            "fontSize": 14,
+            "fontWeight": "normal"
+           }
+          ]
+         },
+         {
+          "type": "frame",
+          "id": "bGJc7",
+          "name": "Input",
+          "width": "fill_container",
+          "height": 48,
+          "fill": "$surface-2",
+          "cornerRadius": 2,
+          "stroke": "$error",
+          "strokeWidth": 1,
+          "padding": [
+           0,
+           14
+          ],
+          "justifyContent": "space_between",
+          "alignItems": "center",
+          "children": [
+           {
+            "type": "text",
+            "id": "Z4x7wO",
+            "name": "Value",
+            "fill": "$text-primary",
+            "content": "name@example",
+            "fontFamily": "$font-mono",
+            "fontSize": 14,
+            "fontWeight": "normal"
+           }
+          ]
+         },
+         {
+          "type": "text",
+          "id": "t96p1C",
+          "x": 0,
+          "y": 0,
+          "name": "Hint",
+          "enabled": true,
+          "fill": "$error",
+          "content": "Проверьте адрес электронной почты",
+          "fontFamily": "$font-sans",
+          "fontSize": 13,
+          "fontWeight": "normal",
+          "_hidden": "enabled:false - not rendered"
+         }
+        ],
+        "component": "Field"
+       }
+      ]
+     },
+     {
+      "type": "frame",
+      "id": "kBRqh",
+      "name": "03 / НЕКОРРЕКТНЫЙ СОСТАВ",
+      "width": "fill_container",
+      "height": "fill_container",
+      "stroke": "$line",
+      "strokeWidth": {
+       "right": 1,
+       "bottom": 1
+      },
+      "layout": "vertical",
+      "gap": 24,
+      "padding": [
+       28,
+       32,
+       36,
+       32
+      ],
+      "children": [
+       {
+        "type": "text",
+        "id": "N4U02",
+        "name": "Caption",
+        "fill": "$text-secondary",
+        "content": "03 / НЕКОРРЕКТНЫЙ СОСТАВ",
+        "fontFamily": "$font-mono",
+        "fontSize": 12,
+        "fontWeight": "normal",
+        "letterSpacing": 0.6
+       },
+       {
+        "type": "frame",
+        "id": "Z53Kga",
+        "name": "Banner",
+        "width": "fill_container",
+        "fill": "#FF4D5E14",
+        "stroke": "$error",
+        "strokeWidth": 1,
+        "gap": 12,
+        "padding": [
+         14,
+         16
+        ],
+        "children": [
+         {
+          "type": "icon",
+          "id": "U91iW",
+          "name": "Icon",
+          "width": 18,
+          "height": 18,
+          "icon": "triangle-alert",
+          "library": "lucide",
+          "fill": "$error"
+         },
+         {
+          "type": "frame",
+          "id": "sct4I",
+          "name": "Message",
+          "layout": "vertical",
+          "gap": 6,
+          "children": [
+           {
+            "type": "text",
+            "id": "GURmU",
+            "name": "Text",
+            "fill": "$text-primary",
+            "content": "В команде должно быть",
+            "lineHeight": 1.4,
+            "fontFamily": "$font-sans",
+            "fontSize": 15,
+            "fontWeight": "normal"
+           },
+           {
+            "type": "frame",
+            "id": "G7K0MZ",
+            "name": "Line 2",
+            "gap": 5,
+            "alignItems": "center",
+            "children": [
+             {
+              "type": "text",
+              "id": "wpBRO",
+              "name": "Text",
+              "fill": "$text-primary",
+              "content": "от",
+              "lineHeight": 1.4,
+              "fontFamily": "$font-sans",
+              "fontSize": 15,
+              "fontWeight": "normal"
+             },
+             {
+              "type": "frame",
+              "id": "BB2kH",
+              "name": "Placeholder",
+              "fill": "#FFFFFF08",
+              "cornerRadius": 3,
+              "stroke": "#3E3E3E",
+              "strokeWidth": 1,
+              "padding": [
+               3,
+               8
+              ],
+              "alignItems": "center",
+              "children": [
+               {
+                "type": "text",
+                "id": "gMeM0",
+                "name": "Text",
+                "fill": "#ABAAA4",
+                "content": "[N]",
+                "fontFamily": "$font-mono",
+                "fontSize": 13,
+                "fontWeight": "normal"
+               }
+              ],
+              "component": "Placeholder"
+             },
+             {
+              "type": "text",
+              "id": "OZutk",
+              "name": "Text",
+              "fill": "$text-primary",
+              "content": "до",
+              "lineHeight": 1.4,
+              "fontFamily": "$font-sans",
+              "fontSize": 15,
+              "fontWeight": "normal"
+             },
+             {
+              "type": "frame",
+              "id": "MnxAp",
+              "name": "Placeholder",
+              "fill": "#FFFFFF08",
+              "cornerRadius": 3,
+              "stroke": "#3E3E3E",
+              "strokeWidth": 1,
+              "padding": [
+               3,
+               8
+              ],
+              "alignItems": "center",
+              "children": [
+               {
+                "type": "text",
+                "id": "gMeM0",
+                "name": "Text",
+                "fill": "#ABAAA4",
+                "content": "[N]",
+                "fontFamily": "$font-mono",
+                "fontSize": 13,
+                "fontWeight": "normal"
+               }
+              ],
+              "component": "Placeholder"
+             },
+             {
+              "type": "text",
+              "id": "PMRAQ",
+              "name": "Text",
+              "fill": "$text-primary",
+              "content": "участников",
+              "lineHeight": 1.4,
+              "fontFamily": "$font-sans",
+              "fontSize": 15,
+              "fontWeight": "normal"
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "type": "frame",
+    "id": "BMVq2",
+    "name": "Row",
+    "width": "fill_container",
+    "height": 250,
+    "stroke": "$line",
+    "strokeWidth": {
+     "top": 1,
+     "left": 1
+    },
+    "children": [
+     {
+      "type": "frame",
+      "id": "yKW1a",
+      "name": "04 / ОТПРАВКА",
+      "width": "fill_container",
+      "height": "fill_container",
+      "stroke": "$line",
+      "strokeWidth": {
+       "right": 1,
+       "bottom": 1
+      },
+      "layout": "vertical",
+      "gap": 24,
+      "padding": [
+       28,
+       32,
+       36,
+       32
+      ],
+      "children": [
+       {
+        "type": "text",
+        "id": "F7uvK5",
+        "name": "Caption",
+        "fill": "$text-secondary",
+        "content": "04 / ОТПРАВКА",
+        "fontFamily": "$font-mono",
+        "fontSize": 12,
+        "fontWeight": "normal",
+        "letterSpacing": 0.6
+       },
+       {
+        "type": "frame",
+        "id": "E7LQj",
+        "name": "Submit Loading",
+        "fill": "$accent",
+        "gap": 14,
+        "padding": [
+         15,
+         20
+        ],
+        "alignItems": "center",
+        "children": [
+         {
+          "type": "text",
+          "id": "lp06A",
+          "name": "Label",
+          "fill": "$accent-ink",
+          "content": "ОТПРАВЛЯЕМ ЗАЯВКУ…",
+          "fontFamily": "$font-mono",
+          "fontSize": 13,
+          "fontWeight": "500",
+          "letterSpacing": 0.6
+         },
+         {
+          "type": "icon",
+          "id": "ktrjq",
+          "name": "Icon",
+          "width": 16,
+          "height": 16,
+          "icon": "loader",
+          "library": "lucide",
+          "fill": "$accent-ink"
+         }
+        ],
+        "component": "Button / Primary",
+        "opacity": 0.72
+       }
+      ]
+     },
+     {
+      "type": "frame",
+      "id": "XGvnA",
+      "name": "05 / УСПЕШНАЯ ОТПРАВКА",
+      "width": "fill_container",
+      "height": "fill_container",
+      "stroke": "$line",
+      "strokeWidth": {
+       "right": 1,
+       "bottom": 1
+      },
+      "layout": "vertical",
+      "gap": 24,
+      "padding": [
+       28,
+       32,
+       36,
+       32
+      ],
+      "children": [
+       {
+        "type": "text",
+        "id": "XA3v1",
+        "name": "Caption",
+        "fill": "$text-secondary",
+        "content": "05 / УСПЕШНАЯ ОТПРАВКА",
+        "fontFamily": "$font-mono",
+        "fontSize": 12,
+        "fontWeight": "normal",
+        "letterSpacing": 0.6
+       },
+       {
+        "type": "frame",
+        "id": "E31tP",
+        "name": "Success",
+        "width": "fill_container",
+        "layout": "vertical",
+        "gap": 16,
+        "children": [
+         {
+          "type": "frame",
+          "id": "d4rYK",
+          "name": "Check",
+          "width": 40,
+          "height": 40,
+          "fill": "$success",
+          "cornerRadius": 20,
+          "justifyContent": "center",
+          "alignItems": "center",
+          "children": [
+           {
+            "type": "icon",
+            "id": "oFv0L",
+            "name": "Icon",
+            "width": 20,
+            "height": 20,
+            "icon": "check",
+            "library": "lucide",
+            "fill": "$bg"
+           }
+          ]
+         },
+         {
+          "type": "text",
+          "id": "z8jEH",
+          "name": "Success Title",
+          "fill": "$text-primary",
+          "content": "Спасибо! Заявка отправлена",
+          "lineHeight": 1.4,
+          "fontFamily": "$font-sans",
+          "fontSize": 24,
+          "fontWeight": "500",
+          "letterSpacing": -0.6
+         },
+         {
+          "type": "frame",
+          "id": "d8pnoA",
+          "name": "Placeholder",
+          "fill": "#FFFFFF08",
+          "cornerRadius": 3,
+          "stroke": "#3E3E3E",
+          "strokeWidth": 1,
+          "padding": [
+           3,
+           8
+          ],
+          "alignItems": "center",
+          "children": [
+           {
+            "type": "text",
+            "id": "gMeM0",
+            "name": "Text",
+            "fill": "#ABAAA4",
+            "content": "[что произойдёт дальше, где участник получит информацию и в какой срок]",
+            "fontFamily": "$font-mono",
+            "fontSize": 13,
+            "fontWeight": "normal",
+            "textGrowth": "fixed-width",
+            "width": "fill_container"
+           }
+          ],
+          "component": "Placeholder",
+          "width": "fill_container"
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": "frame",
+      "id": "KxfWs",
+      "name": "06 / ОШИБКА ОТПРАВКИ",
+      "width": "fill_container",
+      "height": "fill_container",
+      "stroke": "$line",
+      "strokeWidth": {
+       "right": 1,
+       "bottom": 1
+      },
+      "layout": "vertical",
+      "gap": 24,
+      "padding": [
+       28,
+       32,
+       36,
+       32
+      ],
+      "children": [
+       {
+        "type": "text",
+        "id": "WoXAG",
+        "name": "Caption",
+        "fill": "$text-secondary",
+        "content": "06 / ОШИБКА ОТПРАВКИ",
+        "fontFamily": "$font-mono",
+        "fontSize": 12,
+        "fontWeight": "normal",
+        "letterSpacing": 0.6
+       },
+       {
+        "type": "frame",
+        "id": "rbxMl",
+        "name": "Banner",
+        "width": "fill_container",
+        "fill": "#FF4D5E14",
+        "stroke": "$error",
+        "strokeWidth": 1,
+        "gap": 12,
+        "padding": [
+         14,
+         16
+        ],
+        "alignItems": "center",
+        "children": [
+         {
+          "type": "icon",
+          "id": "wy8vg",
+          "name": "Icon",
+          "width": 18,
+          "height": 18,
+          "icon": "triangle-alert",
+          "library": "lucide",
+          "fill": "$error"
+         },
+         {
+          "type": "text",
+          "id": "VKvuw",
+          "name": "Message",
+          "fill": "$text-primary",
+          "textGrowth": "fixed-width",
+          "width": "fill_container",
+          "content": "Не удалось отправить заявку. Попробуйте ещё раз",
+          "lineHeight": 1.4,
+          "fontFamily": "$font-sans",
+          "fontSize": 15,
+          "fontWeight": "normal"
+         }
+        ]
+       },
+       {
+        "type": "frame",
+        "id": "B7Nqs",
+        "name": "Submit Retry",
+        "fill": "$accent",
+        "gap": 14,
+        "padding": [
+         15,
+         20
+        ],
+        "alignItems": "center",
+        "children": [
+         {
+          "type": "text",
+          "id": "lp06A",
+          "name": "Label",
+          "fill": "$accent-ink",
+          "content": "ОТПРАВИТЬ ЗАЯВКУ",
+          "fontFamily": "$font-mono",
+          "fontSize": 13,
+          "fontWeight": "500",
+          "letterSpacing": 0.6
+         },
+         {
+          "type": "icon",
+          "id": "ktrjq",
+          "name": "Icon",
+          "width": 16,
+          "height": 16,
+          "icon": "arrow-right",
+          "library": "lucide",
+          "fill": "$accent-ink"
+         }
+        ],
+        "component": "Button / Primary"
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ }
+}
